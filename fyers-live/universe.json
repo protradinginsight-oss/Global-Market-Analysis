@@ -1,0 +1,1302 @@
+{
+  "built_from": "Fyers public symbol master",
+  "total_symbols": 213,
+  "max_per_connection": 200,
+  "shards": {
+    "acc1": [
+      "NSE:360ONE-EQ",
+      "NSE:ABB-EQ",
+      "NSE:ABCAPITAL-EQ",
+      "NSE:ADANIENSOL-EQ",
+      "NSE:ADANIENT-EQ",
+      "NSE:ADANIGREEN-EQ",
+      "NSE:ADANIPORTS-EQ",
+      "NSE:ADANIPOWER-EQ",
+      "NSE:ALKEM-EQ",
+      "NSE:AMBER-EQ",
+      "NSE:AMBUJACEM-EQ",
+      "NSE:ANGELONE-EQ",
+      "NSE:APLAPOLLO-EQ",
+      "NSE:APOLLOHOSP-EQ",
+      "NSE:ASHOKLEY-EQ",
+      "NSE:ASIANPAINT-EQ",
+      "NSE:ASTRAL-EQ",
+      "NSE:AUBANK-EQ",
+      "NSE:AUROPHARMA-EQ",
+      "NSE:AXISBANK-EQ",
+      "NSE:BAJAJ-AUTO-EQ",
+      "NSE:BAJAJFINSV-EQ",
+      "NSE:BAJAJHLDNG-EQ",
+      "NSE:BAJFINANCE-EQ",
+      "NSE:BANDHANBNK-EQ",
+      "NSE:BANKBARODA-EQ",
+      "NSE:BANKINDIA-EQ",
+      "NSE:NIFTYBANK-INDEX",
+      "NSE:BDL-EQ",
+      "NSE:BEL-EQ",
+      "NSE:BHARATFORG-EQ",
+      "NSE:BHARTIARTL-EQ",
+      "NSE:BHEL-EQ",
+      "NSE:BIOCON-EQ",
+      "NSE:BLUESTARCO-EQ",
+      "NSE:BOSCHLTD-EQ",
+      "NSE:BPCL-EQ",
+      "NSE:BRITANNIA-EQ",
+      "NSE:BSE-EQ",
+      "NSE:CAMS-EQ",
+      "NSE:CANBK-EQ",
+      "NSE:CDSL-EQ",
+      "NSE:CGPOWER-EQ",
+      "NSE:CHOLAFIN-EQ",
+      "NSE:CIPLA-EQ",
+      "NSE:COALINDIA-EQ",
+      "NSE:COCHINSHIP-EQ",
+      "NSE:COFORGE-EQ",
+      "NSE:COLPAL-EQ",
+      "NSE:CONCOR-EQ",
+      "NSE:CROMPTON-EQ",
+      "NSE:CUMMINSIND-EQ",
+      "NSE:DABUR-EQ",
+      "NSE:DALBHARAT-EQ"
+    ],
+    "acc2-live-stockoptions": [
+      "NSE:DELHIVERY-EQ",
+      "NSE:DIVISLAB-EQ",
+      "NSE:DIXON-EQ",
+      "NSE:DLF-EQ",
+      "NSE:DMART-EQ",
+      "NSE:DRREDDY-EQ",
+      "NSE:EICHERMOT-EQ",
+      "NSE:ETERNAL-EQ",
+      "NSE:FEDERALBNK-EQ",
+      "NSE:FINNIFTY-INDEX",
+      "NSE:FORCEMOT-EQ",
+      "NSE:FORTIS-EQ",
+      "NSE:GAIL-EQ",
+      "NSE:GLENMARK-EQ",
+      "NSE:GMRAIRPORT-EQ",
+      "NSE:GODFRYPHLP-EQ",
+      "NSE:GODREJCP-EQ",
+      "NSE:GODREJPROP-EQ",
+      "NSE:GRASIM-EQ",
+      "NSE:GVT&D-EQ",
+      "NSE:HAL-EQ",
+      "NSE:HAVELLS-EQ",
+      "NSE:HCLTECH-EQ",
+      "NSE:HDFCAMC-EQ",
+      "NSE:HDFCBANK-EQ",
+      "NSE:HDFCLIFE-EQ",
+      "NSE:HEROMOTOCO-EQ",
+      "NSE:HINDALCO-EQ",
+      "NSE:HINDPETRO-EQ",
+      "NSE:HINDUNILVR-EQ",
+      "NSE:HINDZINC-EQ",
+      "NSE:HYUNDAI-EQ",
+      "NSE:ICICIBANK-EQ",
+      "NSE:ICICIGI-EQ",
+      "NSE:ICICIPRULI-EQ",
+      "NSE:IDEA-EQ",
+      "NSE:IDFCFIRSTB-EQ",
+      "NSE:IEX-EQ",
+      "NSE:INDHOTEL-EQ",
+      "NSE:INDIANB-EQ",
+      "NSE:INDIGO-EQ",
+      "NSE:INDUSINDBK-EQ",
+      "NSE:INDUSTOWER-EQ",
+      "NSE:INFY-EQ",
+      "NSE:INOXWIND-EQ",
+      "NSE:IOC-EQ",
+      "NSE:IREDA-EQ",
+      "NSE:IRFC-EQ",
+      "NSE:ITC-EQ",
+      "NSE:JINDALSTEL-EQ",
+      "NSE:JIOFIN-EQ",
+      "NSE:JSWENERGY-EQ",
+      "NSE:JSWSTEEL-EQ",
+      "NSE:JUBLFOOD-EQ"
+    ],
+    "acc3-hbfyer": [
+      "NSE:KALYANKJIL-EQ",
+      "NSE:KAYNES-EQ",
+      "NSE:KEI-EQ",
+      "NSE:KFINTECH-EQ",
+      "NSE:KOTAKBANK-EQ",
+      "NSE:KPITTECH-EQ",
+      "NSE:LAURUSLABS-EQ",
+      "NSE:LICHSGFIN-EQ",
+      "NSE:LICI-EQ",
+      "NSE:LODHA-EQ",
+      "NSE:LT-EQ",
+      "NSE:LTF-EQ",
+      "NSE:LTM-EQ",
+      "NSE:LUPIN-EQ",
+      "NSE:M&M-EQ",
+      "NSE:MANAPPURAM-EQ",
+      "NSE:MANKIND-EQ",
+      "NSE:MARICO-EQ",
+      "NSE:MARUTI-EQ",
+      "NSE:MAXHEALTH-EQ",
+      "NSE:MAZDOCK-EQ",
+      "NSE:MCX-EQ",
+      "NSE:MFSL-EQ",
+      "NSE:MIDCPNIFTY-INDEX",
+      "NSE:MOTHERSON-EQ",
+      "NSE:MOTILALOFS-EQ",
+      "NSE:MPHASIS-EQ",
+      "NSE:MUTHOOTFIN-EQ",
+      "NSE:NAM-INDIA-EQ",
+      "NSE:NATIONALUM-EQ",
+      "NSE:NAUKRI-EQ",
+      "NSE:NBCC-EQ",
+      "NSE:NESTLEIND-EQ",
+      "NSE:NHPC-EQ",
+      "NSE:NIFTY50-INDEX",
+      "NSE:NIFTYNXT50-INDEX",
+      "NSE:NMDC-EQ",
+      "NSE:NTPC-EQ",
+      "NSE:NYKAA-EQ",
+      "NSE:OBEROIRLTY-EQ",
+      "NSE:OFSS-EQ",
+      "NSE:OIL-EQ",
+      "NSE:ONGC-EQ",
+      "NSE:PAGEIND-EQ",
+      "NSE:PATANJALI-EQ",
+      "NSE:PAYTM-EQ",
+      "NSE:PERSISTENT-EQ",
+      "NSE:PETRONET-EQ",
+      "NSE:PFC-EQ",
+      "NSE:PGEL-EQ",
+      "NSE:PHOENIXLTD-EQ",
+      "NSE:PIDILITIND-EQ",
+      "NSE:PIIND-EQ",
+      "NSE:PNB-EQ"
+    ],
+    "acc4-mdkansari": [
+      "NSE:PNBHOUSING-EQ",
+      "NSE:POLICYBZR-EQ",
+      "NSE:POLYCAB-EQ",
+      "NSE:POWERGRID-EQ",
+      "NSE:POWERINDIA-EQ",
+      "NSE:PREMIERENE-EQ",
+      "NSE:PRESTIGE-EQ",
+      "NSE:RADICO-EQ",
+      "NSE:RBLBANK-EQ",
+      "NSE:RECLTD-EQ",
+      "NSE:RELIANCE-EQ",
+      "NSE:RVNL-EQ",
+      "NSE:SAIL-EQ",
+      "NSE:SBICARD-EQ",
+      "NSE:SBILIFE-EQ",
+      "NSE:SBIN-EQ",
+      "NSE:SHREECEM-EQ",
+      "NSE:SHRIRAMFIN-EQ",
+      "NSE:SIEMENS-EQ",
+      "NSE:SOLARINDS-EQ",
+      "NSE:SONACOMS-EQ",
+      "NSE:SRF-EQ",
+      "NSE:SUNPHARMA-EQ",
+      "NSE:SUPREMEIND-EQ",
+      "NSE:SUZLON-EQ",
+      "NSE:SWIGGY-EQ",
+      "NSE:TATACONSUM-EQ",
+      "NSE:TATAELXSI-EQ",
+      "NSE:TATAPOWER-EQ",
+      "NSE:TATASTEEL-EQ",
+      "NSE:TCS-EQ",
+      "NSE:TECHM-EQ",
+      "NSE:TIINDIA-EQ",
+      "NSE:TITAN-EQ",
+      "NSE:TMPV-EQ",
+      "NSE:TORNTPHARM-EQ",
+      "NSE:TRENT-EQ",
+      "NSE:TVSMOTOR-EQ",
+      "NSE:ULTRACEMCO-EQ",
+      "NSE:UNIONBANK-EQ",
+      "NSE:UNITDSPR-EQ",
+      "NSE:UNOMINDA-EQ",
+      "NSE:UPL-EQ",
+      "NSE:VBL-EQ",
+      "NSE:VEDL-EQ",
+      "NSE:VMM-EQ",
+      "NSE:VOLTAS-EQ",
+      "NSE:WAAREEENER-EQ",
+      "NSE:WIPRO-EQ",
+      "NSE:YESBANK-EQ",
+      "NSE:ZYDUSLIFE-EQ"
+    ]
+  },
+  "tick_symbols": [
+    "NSE:RELIANCE-EQ",
+    "NSE:HDFCBANK-EQ",
+    "NSE:ICICIBANK-EQ",
+    "NSE:INFY-EQ",
+    "NSE:SBIN-EQ"
+  ],
+  "all": [
+    {
+      "underlying": "360ONE",
+      "ticker": "NSE:360ONE-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "ABB",
+      "ticker": "NSE:ABB-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "ABCAPITAL",
+      "ticker": "NSE:ABCAPITAL-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "ADANIENSOL",
+      "ticker": "NSE:ADANIENSOL-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "ADANIENT",
+      "ticker": "NSE:ADANIENT-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "ADANIGREEN",
+      "ticker": "NSE:ADANIGREEN-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "ADANIPORTS",
+      "ticker": "NSE:ADANIPORTS-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "ADANIPOWER",
+      "ticker": "NSE:ADANIPOWER-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "ALKEM",
+      "ticker": "NSE:ALKEM-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "AMBER",
+      "ticker": "NSE:AMBER-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "AMBUJACEM",
+      "ticker": "NSE:AMBUJACEM-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "ANGELONE",
+      "ticker": "NSE:ANGELONE-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "APLAPOLLO",
+      "ticker": "NSE:APLAPOLLO-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "APOLLOHOSP",
+      "ticker": "NSE:APOLLOHOSP-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "ASHOKLEY",
+      "ticker": "NSE:ASHOKLEY-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "ASIANPAINT",
+      "ticker": "NSE:ASIANPAINT-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "ASTRAL",
+      "ticker": "NSE:ASTRAL-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "AUBANK",
+      "ticker": "NSE:AUBANK-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "AUROPHARMA",
+      "ticker": "NSE:AUROPHARMA-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "AXISBANK",
+      "ticker": "NSE:AXISBANK-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "BAJAJ-AUTO",
+      "ticker": "NSE:BAJAJ-AUTO-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "BAJAJFINSV",
+      "ticker": "NSE:BAJAJFINSV-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "BAJAJHLDNG",
+      "ticker": "NSE:BAJAJHLDNG-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "BAJFINANCE",
+      "ticker": "NSE:BAJFINANCE-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "BANDHANBNK",
+      "ticker": "NSE:BANDHANBNK-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "BANKBARODA",
+      "ticker": "NSE:BANKBARODA-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "BANKINDIA",
+      "ticker": "NSE:BANKINDIA-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "BANKNIFTY",
+      "ticker": "NSE:NIFTYBANK-INDEX",
+      "kind": "index"
+    },
+    {
+      "underlying": "BDL",
+      "ticker": "NSE:BDL-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "BEL",
+      "ticker": "NSE:BEL-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "BHARATFORG",
+      "ticker": "NSE:BHARATFORG-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "BHARTIARTL",
+      "ticker": "NSE:BHARTIARTL-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "BHEL",
+      "ticker": "NSE:BHEL-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "BIOCON",
+      "ticker": "NSE:BIOCON-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "BLUESTARCO",
+      "ticker": "NSE:BLUESTARCO-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "BOSCHLTD",
+      "ticker": "NSE:BOSCHLTD-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "BPCL",
+      "ticker": "NSE:BPCL-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "BRITANNIA",
+      "ticker": "NSE:BRITANNIA-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "BSE",
+      "ticker": "NSE:BSE-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "CAMS",
+      "ticker": "NSE:CAMS-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "CANBK",
+      "ticker": "NSE:CANBK-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "CDSL",
+      "ticker": "NSE:CDSL-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "CGPOWER",
+      "ticker": "NSE:CGPOWER-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "CHOLAFIN",
+      "ticker": "NSE:CHOLAFIN-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "CIPLA",
+      "ticker": "NSE:CIPLA-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "COALINDIA",
+      "ticker": "NSE:COALINDIA-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "COCHINSHIP",
+      "ticker": "NSE:COCHINSHIP-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "COFORGE",
+      "ticker": "NSE:COFORGE-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "COLPAL",
+      "ticker": "NSE:COLPAL-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "CONCOR",
+      "ticker": "NSE:CONCOR-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "CROMPTON",
+      "ticker": "NSE:CROMPTON-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "CUMMINSIND",
+      "ticker": "NSE:CUMMINSIND-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "DABUR",
+      "ticker": "NSE:DABUR-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "DALBHARAT",
+      "ticker": "NSE:DALBHARAT-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "DELHIVERY",
+      "ticker": "NSE:DELHIVERY-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "DIVISLAB",
+      "ticker": "NSE:DIVISLAB-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "DIXON",
+      "ticker": "NSE:DIXON-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "DLF",
+      "ticker": "NSE:DLF-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "DMART",
+      "ticker": "NSE:DMART-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "DRREDDY",
+      "ticker": "NSE:DRREDDY-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "EICHERMOT",
+      "ticker": "NSE:EICHERMOT-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "ETERNAL",
+      "ticker": "NSE:ETERNAL-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "FEDERALBNK",
+      "ticker": "NSE:FEDERALBNK-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "FINNIFTY",
+      "ticker": "NSE:FINNIFTY-INDEX",
+      "kind": "index"
+    },
+    {
+      "underlying": "FORCEMOT",
+      "ticker": "NSE:FORCEMOT-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "FORTIS",
+      "ticker": "NSE:FORTIS-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "GAIL",
+      "ticker": "NSE:GAIL-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "GLENMARK",
+      "ticker": "NSE:GLENMARK-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "GMRAIRPORT",
+      "ticker": "NSE:GMRAIRPORT-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "GODFRYPHLP",
+      "ticker": "NSE:GODFRYPHLP-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "GODREJCP",
+      "ticker": "NSE:GODREJCP-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "GODREJPROP",
+      "ticker": "NSE:GODREJPROP-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "GRASIM",
+      "ticker": "NSE:GRASIM-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "GVT&D",
+      "ticker": "NSE:GVT&D-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "HAL",
+      "ticker": "NSE:HAL-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "HAVELLS",
+      "ticker": "NSE:HAVELLS-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "HCLTECH",
+      "ticker": "NSE:HCLTECH-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "HDFCAMC",
+      "ticker": "NSE:HDFCAMC-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "HDFCBANK",
+      "ticker": "NSE:HDFCBANK-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "HDFCLIFE",
+      "ticker": "NSE:HDFCLIFE-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "HEROMOTOCO",
+      "ticker": "NSE:HEROMOTOCO-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "HINDALCO",
+      "ticker": "NSE:HINDALCO-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "HINDPETRO",
+      "ticker": "NSE:HINDPETRO-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "HINDUNILVR",
+      "ticker": "NSE:HINDUNILVR-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "HINDZINC",
+      "ticker": "NSE:HINDZINC-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "HYUNDAI",
+      "ticker": "NSE:HYUNDAI-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "ICICIBANK",
+      "ticker": "NSE:ICICIBANK-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "ICICIGI",
+      "ticker": "NSE:ICICIGI-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "ICICIPRULI",
+      "ticker": "NSE:ICICIPRULI-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "IDEA",
+      "ticker": "NSE:IDEA-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "IDFCFIRSTB",
+      "ticker": "NSE:IDFCFIRSTB-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "IEX",
+      "ticker": "NSE:IEX-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "INDHOTEL",
+      "ticker": "NSE:INDHOTEL-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "INDIANB",
+      "ticker": "NSE:INDIANB-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "INDIGO",
+      "ticker": "NSE:INDIGO-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "INDUSINDBK",
+      "ticker": "NSE:INDUSINDBK-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "INDUSTOWER",
+      "ticker": "NSE:INDUSTOWER-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "INFY",
+      "ticker": "NSE:INFY-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "INOXWIND",
+      "ticker": "NSE:INOXWIND-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "IOC",
+      "ticker": "NSE:IOC-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "IREDA",
+      "ticker": "NSE:IREDA-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "IRFC",
+      "ticker": "NSE:IRFC-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "ITC",
+      "ticker": "NSE:ITC-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "JINDALSTEL",
+      "ticker": "NSE:JINDALSTEL-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "JIOFIN",
+      "ticker": "NSE:JIOFIN-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "JSWENERGY",
+      "ticker": "NSE:JSWENERGY-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "JSWSTEEL",
+      "ticker": "NSE:JSWSTEEL-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "JUBLFOOD",
+      "ticker": "NSE:JUBLFOOD-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "KALYANKJIL",
+      "ticker": "NSE:KALYANKJIL-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "KAYNES",
+      "ticker": "NSE:KAYNES-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "KEI",
+      "ticker": "NSE:KEI-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "KFINTECH",
+      "ticker": "NSE:KFINTECH-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "KOTAKBANK",
+      "ticker": "NSE:KOTAKBANK-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "KPITTECH",
+      "ticker": "NSE:KPITTECH-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "LAURUSLABS",
+      "ticker": "NSE:LAURUSLABS-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "LICHSGFIN",
+      "ticker": "NSE:LICHSGFIN-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "LICI",
+      "ticker": "NSE:LICI-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "LODHA",
+      "ticker": "NSE:LODHA-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "LT",
+      "ticker": "NSE:LT-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "LTF",
+      "ticker": "NSE:LTF-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "LTM",
+      "ticker": "NSE:LTM-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "LUPIN",
+      "ticker": "NSE:LUPIN-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "M&M",
+      "ticker": "NSE:M&M-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "MANAPPURAM",
+      "ticker": "NSE:MANAPPURAM-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "MANKIND",
+      "ticker": "NSE:MANKIND-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "MARICO",
+      "ticker": "NSE:MARICO-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "MARUTI",
+      "ticker": "NSE:MARUTI-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "MAXHEALTH",
+      "ticker": "NSE:MAXHEALTH-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "MAZDOCK",
+      "ticker": "NSE:MAZDOCK-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "MCX",
+      "ticker": "NSE:MCX-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "MFSL",
+      "ticker": "NSE:MFSL-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "MIDCPNIFTY",
+      "ticker": "NSE:MIDCPNIFTY-INDEX",
+      "kind": "index"
+    },
+    {
+      "underlying": "MOTHERSON",
+      "ticker": "NSE:MOTHERSON-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "MOTILALOFS",
+      "ticker": "NSE:MOTILALOFS-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "MPHASIS",
+      "ticker": "NSE:MPHASIS-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "MUTHOOTFIN",
+      "ticker": "NSE:MUTHOOTFIN-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "NAM-INDIA",
+      "ticker": "NSE:NAM-INDIA-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "NATIONALUM",
+      "ticker": "NSE:NATIONALUM-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "NAUKRI",
+      "ticker": "NSE:NAUKRI-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "NBCC",
+      "ticker": "NSE:NBCC-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "NESTLEIND",
+      "ticker": "NSE:NESTLEIND-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "NHPC",
+      "ticker": "NSE:NHPC-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "NIFTY",
+      "ticker": "NSE:NIFTY50-INDEX",
+      "kind": "index"
+    },
+    {
+      "underlying": "NIFTYNXT50",
+      "ticker": "NSE:NIFTYNXT50-INDEX",
+      "kind": "index"
+    },
+    {
+      "underlying": "NMDC",
+      "ticker": "NSE:NMDC-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "NTPC",
+      "ticker": "NSE:NTPC-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "NYKAA",
+      "ticker": "NSE:NYKAA-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "OBEROIRLTY",
+      "ticker": "NSE:OBEROIRLTY-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "OFSS",
+      "ticker": "NSE:OFSS-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "OIL",
+      "ticker": "NSE:OIL-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "ONGC",
+      "ticker": "NSE:ONGC-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "PAGEIND",
+      "ticker": "NSE:PAGEIND-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "PATANJALI",
+      "ticker": "NSE:PATANJALI-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "PAYTM",
+      "ticker": "NSE:PAYTM-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "PERSISTENT",
+      "ticker": "NSE:PERSISTENT-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "PETRONET",
+      "ticker": "NSE:PETRONET-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "PFC",
+      "ticker": "NSE:PFC-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "PGEL",
+      "ticker": "NSE:PGEL-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "PHOENIXLTD",
+      "ticker": "NSE:PHOENIXLTD-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "PIDILITIND",
+      "ticker": "NSE:PIDILITIND-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "PIIND",
+      "ticker": "NSE:PIIND-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "PNB",
+      "ticker": "NSE:PNB-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "PNBHOUSING",
+      "ticker": "NSE:PNBHOUSING-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "POLICYBZR",
+      "ticker": "NSE:POLICYBZR-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "POLYCAB",
+      "ticker": "NSE:POLYCAB-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "POWERGRID",
+      "ticker": "NSE:POWERGRID-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "POWERINDIA",
+      "ticker": "NSE:POWERINDIA-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "PREMIERENE",
+      "ticker": "NSE:PREMIERENE-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "PRESTIGE",
+      "ticker": "NSE:PRESTIGE-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "RADICO",
+      "ticker": "NSE:RADICO-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "RBLBANK",
+      "ticker": "NSE:RBLBANK-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "RECLTD",
+      "ticker": "NSE:RECLTD-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "RELIANCE",
+      "ticker": "NSE:RELIANCE-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "RVNL",
+      "ticker": "NSE:RVNL-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "SAIL",
+      "ticker": "NSE:SAIL-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "SBICARD",
+      "ticker": "NSE:SBICARD-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "SBILIFE",
+      "ticker": "NSE:SBILIFE-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "SBIN",
+      "ticker": "NSE:SBIN-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "SHREECEM",
+      "ticker": "NSE:SHREECEM-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "SHRIRAMFIN",
+      "ticker": "NSE:SHRIRAMFIN-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "SIEMENS",
+      "ticker": "NSE:SIEMENS-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "SOLARINDS",
+      "ticker": "NSE:SOLARINDS-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "SONACOMS",
+      "ticker": "NSE:SONACOMS-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "SRF",
+      "ticker": "NSE:SRF-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "SUNPHARMA",
+      "ticker": "NSE:SUNPHARMA-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "SUPREMEIND",
+      "ticker": "NSE:SUPREMEIND-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "SUZLON",
+      "ticker": "NSE:SUZLON-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "SWIGGY",
+      "ticker": "NSE:SWIGGY-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "TATACONSUM",
+      "ticker": "NSE:TATACONSUM-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "TATAELXSI",
+      "ticker": "NSE:TATAELXSI-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "TATAPOWER",
+      "ticker": "NSE:TATAPOWER-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "TATASTEEL",
+      "ticker": "NSE:TATASTEEL-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "TCS",
+      "ticker": "NSE:TCS-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "TECHM",
+      "ticker": "NSE:TECHM-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "TIINDIA",
+      "ticker": "NSE:TIINDIA-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "TITAN",
+      "ticker": "NSE:TITAN-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "TMPV",
+      "ticker": "NSE:TMPV-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "TORNTPHARM",
+      "ticker": "NSE:TORNTPHARM-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "TRENT",
+      "ticker": "NSE:TRENT-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "TVSMOTOR",
+      "ticker": "NSE:TVSMOTOR-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "ULTRACEMCO",
+      "ticker": "NSE:ULTRACEMCO-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "UNIONBANK",
+      "ticker": "NSE:UNIONBANK-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "UNITDSPR",
+      "ticker": "NSE:UNITDSPR-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "UNOMINDA",
+      "ticker": "NSE:UNOMINDA-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "UPL",
+      "ticker": "NSE:UPL-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "VBL",
+      "ticker": "NSE:VBL-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "VEDL",
+      "ticker": "NSE:VEDL-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "VMM",
+      "ticker": "NSE:VMM-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "VOLTAS",
+      "ticker": "NSE:VOLTAS-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "WAAREEENER",
+      "ticker": "NSE:WAAREEENER-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "WIPRO",
+      "ticker": "NSE:WIPRO-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "YESBANK",
+      "ticker": "NSE:YESBANK-EQ",
+      "kind": "stock"
+    },
+    {
+      "underlying": "ZYDUSLIFE",
+      "ticker": "NSE:ZYDUSLIFE-EQ",
+      "kind": "stock"
+    }
+  ]
+}

@@ -4,4 +4,4 @@ REM %~dp0 means "wherever this .bat file itself is sitting," so this keeps
 REM working even if the whole project folder gets moved or the drive letter
 REM changes later.
 cd /d "%~dp0"
-py fii_dii_tracker.py
+py -3.12 fii_dii_tracker.py

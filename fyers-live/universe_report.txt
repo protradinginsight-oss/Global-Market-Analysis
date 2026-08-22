@@ -1,0 +1,251 @@
+SUBSCRIPTION UNIVERSE REPORT
+======================================================================
+Total symbols to subscribe: 213
+Capacity: 800 (4 accounts x 200)
+Headroom: 587 spare slots
+
+INDICES
+----------------------------------------------------------------------
+  BANKNIFTY        -> NSE:NIFTYBANK-INDEX
+  FINNIFTY         -> NSE:FINNIFTY-INDEX
+  MIDCPNIFTY       -> NSE:MIDCPNIFTY-INDEX
+  NIFTY            -> NSE:NIFTY50-INDEX
+  NIFTYNXT50       -> NSE:NIFTYNXT50-INDEX
+
+SHARD ASSIGNMENT
+----------------------------------------------------------------------
+  acc1                         54 symbols   (NSE:360ONE-EQ ... NSE:DALBHARAT-EQ)
+  acc2-live-stockoptions       54 symbols   (NSE:DELHIVERY-EQ ... NSE:JUBLFOOD-EQ)
+  acc3-hbfyer                  54 symbols   (NSE:KALYANKJIL-EQ ... NSE:PNB-EQ)
+  acc4-mdkansari               51 symbols   (NSE:PNBHOUSING-EQ ... NSE:ZYDUSLIFE-EQ)
+
+RAW TICK STORAGE (everything else gets 1-min candles)
+----------------------------------------------------------------------
+  NSE:RELIANCE-EQ
+  NSE:HDFCBANK-EQ
+  NSE:ICICIBANK-EQ
+  NSE:INFY-EQ
+  NSE:SBIN-EQ
+
+UNRESOLVED (have derivatives but no cash ticker found)
+----------------------------------------------------------------------
+These are usually delisted names, indices not in the map,
+or symbols that changed name. Worth a glance to confirm
+nothing important is being dropped.
+  NIFTYFPI             no matching -EQ ticker in cash file
+
+FULL LIST
+----------------------------------------------------------------------
+  stock  360ONE               NSE:360ONE-EQ
+  stock  ABB                  NSE:ABB-EQ
+  stock  ABCAPITAL            NSE:ABCAPITAL-EQ
+  stock  ADANIENSOL           NSE:ADANIENSOL-EQ
+  stock  ADANIENT             NSE:ADANIENT-EQ
+  stock  ADANIGREEN           NSE:ADANIGREEN-EQ
+  stock  ADANIPORTS           NSE:ADANIPORTS-EQ
+  stock  ADANIPOWER           NSE:ADANIPOWER-EQ
+  stock  ALKEM                NSE:ALKEM-EQ
+  stock  AMBER                NSE:AMBER-EQ
+  stock  AMBUJACEM            NSE:AMBUJACEM-EQ
+  stock  ANGELONE             NSE:ANGELONE-EQ
+  stock  APLAPOLLO            NSE:APLAPOLLO-EQ
+  stock  APOLLOHOSP           NSE:APOLLOHOSP-EQ
+  stock  ASHOKLEY             NSE:ASHOKLEY-EQ
+  stock  ASIANPAINT           NSE:ASIANPAINT-EQ
+  stock  ASTRAL               NSE:ASTRAL-EQ
+  stock  AUBANK               NSE:AUBANK-EQ
+  stock  AUROPHARMA           NSE:AUROPHARMA-EQ
+  stock  AXISBANK             NSE:AXISBANK-EQ
+  stock  BAJAJ-AUTO           NSE:BAJAJ-AUTO-EQ
+  stock  BAJAJFINSV           NSE:BAJAJFINSV-EQ
+  stock  BAJAJHLDNG           NSE:BAJAJHLDNG-EQ
+  stock  BAJFINANCE           NSE:BAJFINANCE-EQ
+  stock  BANDHANBNK           NSE:BANDHANBNK-EQ
+  stock  BANKBARODA           NSE:BANKBARODA-EQ
+  stock  BANKINDIA            NSE:BANKINDIA-EQ
+  index  BANKNIFTY            NSE:NIFTYBANK-INDEX
+  stock  BDL                  NSE:BDL-EQ
+  stock  BEL                  NSE:BEL-EQ
+  stock  BHARATFORG           NSE:BHARATFORG-EQ
+  stock  BHARTIARTL           NSE:BHARTIARTL-EQ
+  stock  BHEL                 NSE:BHEL-EQ
+  stock  BIOCON               NSE:BIOCON-EQ
+  stock  BLUESTARCO           NSE:BLUESTARCO-EQ
+  stock  BOSCHLTD             NSE:BOSCHLTD-EQ
+  stock  BPCL                 NSE:BPCL-EQ
+  stock  BRITANNIA            NSE:BRITANNIA-EQ
+  stock  BSE                  NSE:BSE-EQ
+  stock  CAMS                 NSE:CAMS-EQ
+  stock  CANBK                NSE:CANBK-EQ
+  stock  CDSL                 NSE:CDSL-EQ
+  stock  CGPOWER              NSE:CGPOWER-EQ
+  stock  CHOLAFIN             NSE:CHOLAFIN-EQ
+  stock  CIPLA                NSE:CIPLA-EQ
+  stock  COALINDIA            NSE:COALINDIA-EQ
+  stock  COCHINSHIP           NSE:COCHINSHIP-EQ
+  stock  COFORGE              NSE:COFORGE-EQ
+  stock  COLPAL               NSE:COLPAL-EQ
+  stock  CONCOR               NSE:CONCOR-EQ
+  stock  CROMPTON             NSE:CROMPTON-EQ
+  stock  CUMMINSIND           NSE:CUMMINSIND-EQ
+  stock  DABUR                NSE:DABUR-EQ
+  stock  DALBHARAT            NSE:DALBHARAT-EQ
+  stock  DELHIVERY            NSE:DELHIVERY-EQ
+  stock  DIVISLAB             NSE:DIVISLAB-EQ
+  stock  DIXON                NSE:DIXON-EQ
+  stock  DLF                  NSE:DLF-EQ
+  stock  DMART                NSE:DMART-EQ
+  stock  DRREDDY              NSE:DRREDDY-EQ
+  stock  EICHERMOT            NSE:EICHERMOT-EQ
+  stock  ETERNAL              NSE:ETERNAL-EQ
+  stock  FEDERALBNK           NSE:FEDERALBNK-EQ
+  index  FINNIFTY             NSE:FINNIFTY-INDEX
+  stock  FORCEMOT             NSE:FORCEMOT-EQ
+  stock  FORTIS               NSE:FORTIS-EQ
+  stock  GAIL                 NSE:GAIL-EQ
+  stock  GLENMARK             NSE:GLENMARK-EQ
+  stock  GMRAIRPORT           NSE:GMRAIRPORT-EQ
+  stock  GODFRYPHLP           NSE:GODFRYPHLP-EQ
+  stock  GODREJCP             NSE:GODREJCP-EQ
+  stock  GODREJPROP           NSE:GODREJPROP-EQ
+  stock  GRASIM               NSE:GRASIM-EQ
+  stock  GVT&D                NSE:GVT&D-EQ
+  stock  HAL                  NSE:HAL-EQ
+  stock  HAVELLS              NSE:HAVELLS-EQ
+  stock  HCLTECH              NSE:HCLTECH-EQ
+  stock  HDFCAMC              NSE:HDFCAMC-EQ
+  stock  HDFCBANK             NSE:HDFCBANK-EQ
+  stock  HDFCLIFE             NSE:HDFCLIFE-EQ
+  stock  HEROMOTOCO           NSE:HEROMOTOCO-EQ
+  stock  HINDALCO             NSE:HINDALCO-EQ
+  stock  HINDPETRO            NSE:HINDPETRO-EQ
+  stock  HINDUNILVR           NSE:HINDUNILVR-EQ
+  stock  HINDZINC             NSE:HINDZINC-EQ
+  stock  HYUNDAI              NSE:HYUNDAI-EQ
+  stock  ICICIBANK            NSE:ICICIBANK-EQ
+  stock  ICICIGI              NSE:ICICIGI-EQ
+  stock  ICICIPRULI           NSE:ICICIPRULI-EQ
+  stock  IDEA                 NSE:IDEA-EQ
+  stock  IDFCFIRSTB           NSE:IDFCFIRSTB-EQ
+  stock  IEX                  NSE:IEX-EQ
+  stock  INDHOTEL             NSE:INDHOTEL-EQ
+  stock  INDIANB              NSE:INDIANB-EQ
+  stock  INDIGO               NSE:INDIGO-EQ
+  stock  INDUSINDBK           NSE:INDUSINDBK-EQ
+  stock  INDUSTOWER           NSE:INDUSTOWER-EQ
+  stock  INFY                 NSE:INFY-EQ
+  stock  INOXWIND             NSE:INOXWIND-EQ
+  stock  IOC                  NSE:IOC-EQ
+  stock  IREDA                NSE:IREDA-EQ
+  stock  IRFC                 NSE:IRFC-EQ
+  stock  ITC                  NSE:ITC-EQ
+  stock  JINDALSTEL           NSE:JINDALSTEL-EQ
+  stock  JIOFIN               NSE:JIOFIN-EQ
+  stock  JSWENERGY            NSE:JSWENERGY-EQ
+  stock  JSWSTEEL             NSE:JSWSTEEL-EQ
+  stock  JUBLFOOD             NSE:JUBLFOOD-EQ
+  stock  KALYANKJIL           NSE:KALYANKJIL-EQ
+  stock  KAYNES               NSE:KAYNES-EQ
+  stock  KEI                  NSE:KEI-EQ
+  stock  KFINTECH             NSE:KFINTECH-EQ
+  stock  KOTAKBANK            NSE:KOTAKBANK-EQ
+  stock  KPITTECH             NSE:KPITTECH-EQ
+  stock  LAURUSLABS           NSE:LAURUSLABS-EQ
+  stock  LICHSGFIN            NSE:LICHSGFIN-EQ
+  stock  LICI                 NSE:LICI-EQ
+  stock  LODHA                NSE:LODHA-EQ
+  stock  LT                   NSE:LT-EQ
+  stock  LTF                  NSE:LTF-EQ
+  stock  LTM                  NSE:LTM-EQ
+  stock  LUPIN                NSE:LUPIN-EQ
+  stock  M&M                  NSE:M&M-EQ
+  stock  MANAPPURAM           NSE:MANAPPURAM-EQ
+  stock  MANKIND              NSE:MANKIND-EQ
+  stock  MARICO               NSE:MARICO-EQ
+  stock  MARUTI               NSE:MARUTI-EQ
+  stock  MAXHEALTH            NSE:MAXHEALTH-EQ
+  stock  MAZDOCK              NSE:MAZDOCK-EQ
+  stock  MCX                  NSE:MCX-EQ
+  stock  MFSL                 NSE:MFSL-EQ
+  index  MIDCPNIFTY           NSE:MIDCPNIFTY-INDEX
+  stock  MOTHERSON            NSE:MOTHERSON-EQ
+  stock  MOTILALOFS           NSE:MOTILALOFS-EQ
+  stock  MPHASIS              NSE:MPHASIS-EQ
+  stock  MUTHOOTFIN           NSE:MUTHOOTFIN-EQ
+  stock  NAM-INDIA            NSE:NAM-INDIA-EQ
+  stock  NATIONALUM           NSE:NATIONALUM-EQ
+  stock  NAUKRI               NSE:NAUKRI-EQ
+  stock  NBCC                 NSE:NBCC-EQ
+  stock  NESTLEIND            NSE:NESTLEIND-EQ
+  stock  NHPC                 NSE:NHPC-EQ
+  index  NIFTY                NSE:NIFTY50-INDEX
+  index  NIFTYNXT50           NSE:NIFTYNXT50-INDEX
+  stock  NMDC                 NSE:NMDC-EQ
+  stock  NTPC                 NSE:NTPC-EQ
+  stock  NYKAA                NSE:NYKAA-EQ
+  stock  OBEROIRLTY           NSE:OBEROIRLTY-EQ
+  stock  OFSS                 NSE:OFSS-EQ
+  stock  OIL                  NSE:OIL-EQ
+  stock  ONGC                 NSE:ONGC-EQ
+  stock  PAGEIND              NSE:PAGEIND-EQ
+  stock  PATANJALI            NSE:PATANJALI-EQ
+  stock  PAYTM                NSE:PAYTM-EQ
+  stock  PERSISTENT           NSE:PERSISTENT-EQ
+  stock  PETRONET             NSE:PETRONET-EQ
+  stock  PFC                  NSE:PFC-EQ
+  stock  PGEL                 NSE:PGEL-EQ
+  stock  PHOENIXLTD           NSE:PHOENIXLTD-EQ
+  stock  PIDILITIND           NSE:PIDILITIND-EQ
+  stock  PIIND                NSE:PIIND-EQ
+  stock  PNB                  NSE:PNB-EQ
+  stock  PNBHOUSING           NSE:PNBHOUSING-EQ
+  stock  POLICYBZR            NSE:POLICYBZR-EQ
+  stock  POLYCAB              NSE:POLYCAB-EQ
+  stock  POWERGRID            NSE:POWERGRID-EQ
+  stock  POWERINDIA           NSE:POWERINDIA-EQ
+  stock  PREMIERENE           NSE:PREMIERENE-EQ
+  stock  PRESTIGE             NSE:PRESTIGE-EQ
+  stock  RADICO               NSE:RADICO-EQ
+  stock  RBLBANK              NSE:RBLBANK-EQ
+  stock  RECLTD               NSE:RECLTD-EQ
+  stock  RELIANCE             NSE:RELIANCE-EQ
+  stock  RVNL                 NSE:RVNL-EQ
+  stock  SAIL                 NSE:SAIL-EQ
+  stock  SBICARD              NSE:SBICARD-EQ
+  stock  SBILIFE              NSE:SBILIFE-EQ
+  stock  SBIN                 NSE:SBIN-EQ
+  stock  SHREECEM             NSE:SHREECEM-EQ
+  stock  SHRIRAMFIN           NSE:SHRIRAMFIN-EQ
+  stock  SIEMENS              NSE:SIEMENS-EQ
+  stock  SOLARINDS            NSE:SOLARINDS-EQ
+  stock  SONACOMS             NSE:SONACOMS-EQ
+  stock  SRF                  NSE:SRF-EQ
+  stock  SUNPHARMA            NSE:SUNPHARMA-EQ
+  stock  SUPREMEIND           NSE:SUPREMEIND-EQ
+  stock  SUZLON               NSE:SUZLON-EQ
+  stock  SWIGGY               NSE:SWIGGY-EQ
+  stock  TATACONSUM           NSE:TATACONSUM-EQ
+  stock  TATAELXSI            NSE:TATAELXSI-EQ
+  stock  TATAPOWER            NSE:TATAPOWER-EQ
+  stock  TATASTEEL            NSE:TATASTEEL-EQ
+  stock  TCS                  NSE:TCS-EQ
+  stock  TECHM                NSE:TECHM-EQ
+  stock  TIINDIA              NSE:TIINDIA-EQ
+  stock  TITAN                NSE:TITAN-EQ
+  stock  TMPV                 NSE:TMPV-EQ
+  stock  TORNTPHARM           NSE:TORNTPHARM-EQ
+  stock  TRENT                NSE:TRENT-EQ
+  stock  TVSMOTOR             NSE:TVSMOTOR-EQ
+  stock  ULTRACEMCO           NSE:ULTRACEMCO-EQ
+  stock  UNIONBANK            NSE:UNIONBANK-EQ
+  stock  UNITDSPR             NSE:UNITDSPR-EQ
+  stock  UNOMINDA             NSE:UNOMINDA-EQ
+  stock  UPL                  NSE:UPL-EQ
+  stock  VBL                  NSE:VBL-EQ
+  stock  VEDL                 NSE:VEDL-EQ
+  stock  VMM                  NSE:VMM-EQ
+  stock  VOLTAS               NSE:VOLTAS-EQ
+  stock  WAAREEENER           NSE:WAAREEENER-EQ
+  stock  WIPRO                NSE:WIPRO-EQ
+  stock  YESBANK              NSE:YESBANK-EQ
+  stock  ZYDUSLIFE            NSE:ZYDUSLIFE-EQ
