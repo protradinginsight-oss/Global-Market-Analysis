@@ -43,26 +43,42 @@ LOG_PATH = BASE_DIR / "global_premarket.log"
 
 API_URL = "https://api.twelvedata.com/quote"
 
-# What we track, and how each one is read for an Indian-open view.
-# "direction" says which way this instrument moving UP pushes Indian equities.
-#   +1 = risk-on for Nifty, -1 = headwind for Nifty, 0 = context only
+# What we track, and the weight each cue carries.
 #
-# Note on symbols: index and futures symbols (SPX, IXIC, DXY, BRENT) are
-# premium-tier on Twelve Data and 404 on the free plan. These ETF proxies are
-# ordinary US-listed equities and work on free tiers. They track their
-# underlying closely enough for a directional pre-market read, though they
-# are not identical - ETFs carry expense ratios, can trade at a small premium
-# or discount, and only move during US market hours, so an overnight move in
-# the actual future may not be reflected until the US open.
+# These weights are MEASURED, not assumed. They come from the lagged
+# correlation of each market's overnight close against the next day's Nifty
+# move, over 5 years of daily data (see global-history/query_global.py
+# --lagged). Earlier versions of this file weighted every cue equally, which
+# gave crude the same influence as the S&P despite crude showing no
+# measurable relationship at all.
+#
+# weight = measured correlation. Sign carries direction: positive means the
+# instrument moving up is supportive for Nifty.
+#
+# Instruments measured at |r| < 0.15 are tracked for context but contribute
+# nothing to the verdict - listing them as drivers would overstate what the
+# record supports.
 INSTRUMENTS = [
-    # symbol,  label,                    direction, note
-    ("SPY",    "S&P 500 (SPY)",               1, "US risk appetite"),
-    ("QQQ",    "Nasdaq 100 (QQQ)",            1, "Tech/IT sector read"),
-    ("UUP",    "Dollar Index (UUP)",         -1, "Strong USD pressures EM flows"),
-    ("USD/INR", "USDINR",                    -1, "Weak INR pressures FII flows"),
-    ("USO",    "WTI Crude (USO)",            -1, "India is a net oil importer"),
-    ("XAU/USD", "Gold",                       0, "Risk-off hedge, context"),
+    # symbol,  label,                  weight,  note
+    ("SPY",    "S&P 500 (SPY)",         +0.244, "Strongest measured overnight lead"),
+    ("QQQ",    "Nasdaq 100 (QQQ)",      +0.241, "Nearly as strong; leads Indian IT"),
+    ("EEM",    "EM equities (EEM)",     +0.209, "EM flow proxy, tracks FII appetite"),
+    # Spot VIX is premium-tier on Twelve Data, so this uses the VIX futures
+    # ETF instead. It tracks VIX direction day to day, but not its level:
+    # VIXY bleeds value over time through futures roll, so only treat the
+    # daily percentage move as meaningful, never the price itself.
+    ("VIXY",   "VIX futures ETF",       -0.203, "Fear gauge proxy, inverse"),
+    # Twelve Data uses a slash for crypto pairs, not Yahoo's hyphen.
+    ("BTC/USD","Bitcoin",               +0.174, "Fast risk-appetite read, weaker but real"),
+    ("UUP",    "Dollar Index (UUP)",    -0.149, "Marginal - just above the noise floor"),
+    # --- below the threshold: shown, but not counted ---
+    ("USO",    "WTI Crude (USO)",        0.000, "No measurable daily lead (r=-0.03)"),
+    ("GLD",    "Gold (GLD)",             0.000, "No measurable daily lead (r=+0.05)"),
+    ("USD/INR","USDINR",                 0.000, "No measurable daily lead (r=-0.13 same-day)"),
 ]
+
+# Cues below this absolute correlation are treated as context only.
+WEIGHT_FLOOR = 0.15
 
 # Free tier is rate limited per minute, so space the calls out a little.
 SECONDS_BETWEEN_CALLS = 8
@@ -146,7 +162,7 @@ def collect(conn):
     results = []
     failures = []
 
-    for i, (symbol, label, direction, note) in enumerate(INSTRUMENTS):
+    for i, (symbol, label, weight, note) in enumerate(INSTRUMENTS):
         if i > 0:
             time.sleep(SECONDS_BETWEEN_CALLS)
         try:
@@ -154,7 +170,7 @@ def collect(conn):
             row = {
                 "symbol": symbol,
                 "label": label,
-                "direction": direction,
+                "weight": weight,
                 "note": note,
                 "price": to_float(raw.get("close")),
                 "change_pct": to_float(raw.get("percent_change")),
@@ -185,61 +201,59 @@ def collect(conn):
 
 
 def build_read(results, expected_directional=None):
-    """Turn the raw moves into a plain-language pre-market read.
+    """Turn overnight moves into a weighted read for the Indian open.
 
-    This is a weight-of-evidence summary, not a prediction. It counts how many
-    tracked instruments lean risk-on vs risk-off for Indian equities, and
-    deliberately surfaces disagreement rather than hiding it behind one number.
+    Each cue contributes its move multiplied by its measured correlation with
+    next-day Nifty. A 1% move in the S&P (r=0.244) therefore counts for far
+    more than a 1% move in crude (r~0.00), which is what the historical
+    record supports and what an equal-weighted count got wrong.
     """
-    scored = [r for r in results if r["direction"] != 0 and r["change_pct"] is not None]
-    if not scored:
-        return "No directional instruments available - no read.", []
-
     lines = []
-    positive = 0
-    negative = 0
+    weighted_sum = 0.0
+    weight_used = 0.0
+    counted = 0
 
-    for r in sorted(results, key=lambda x: abs(x["change_pct"] or 0), reverse=True):
+    for r in sorted(results, key=lambda x: abs(x.get("weight", 0)), reverse=True):
         if r["change_pct"] is None:
             continue
-        arrow = "up" if r["change_pct"] >= 0 else "down"
-        lean = ""
-        if r["direction"] != 0:
-            # Instrument's move, translated into its effect on Indian equities
-            effect = r["change_pct"] * r["direction"]
-            if effect > 0:
-                positive += 1
-                lean = "supportive"
-            else:
-                negative += 1
-                lean = "headwind"
-            lean = f" -> {lean} for Nifty"
-        lines.append(
-            f"  {r['label']:<20} {r['change_pct']:+.2f}% ({arrow}){lean}  [{r['note']}]"
-        )
+        w = r.get("weight", 0)
+        move = r["change_pct"]
 
-    total = positive + negative
-    if total == 0:
-        verdict = "No directional signal."
-    elif positive == total:
-        verdict = f"All {total} directional cues lean supportive - broadly risk-on overnight."
-    elif negative == total:
-        verdict = f"All {total} directional cues lean negative - broadly risk-off overnight."
+        if abs(w) >= WEIGHT_FLOOR:
+            contribution = move * w
+            weighted_sum += contribution
+            weight_used += abs(w)
+            counted += 1
+            lean = "supportive" if contribution > 0 else "headwind"
+            tag = f" -> {lean} (w={w:+.2f})"
+        else:
+            tag = "  [context only, no measurable lead]"
+
+        lines.append(f"  {r['label']:<22} {move:+.2f}%{tag}")
+
+    if weight_used == 0:
+        return "No weighted cues available - no read.", []
+
+    # Normalise so the score is comparable day to day regardless of how many
+    # cues were retrievable.
+    score = weighted_sum / weight_used
+
+    if abs(score) < 0.15:
+        verdict = (f"Net signal {score:+.2f}% - essentially flat. Overnight cues "
+                   "give no meaningful lead either way.")
+    elif score > 0:
+        strength = "modestly" if score < 0.5 else "clearly"
+        verdict = (f"Net signal {score:+.2f}% - {strength} supportive from "
+                   f"{counted} weighted cues.")
     else:
-        verdict = (
-            f"Mixed: {positive} supportive vs {negative} headwind. "
-            "Cues disagree - treat direction as unresolved rather than picking a side."
-        )
+        strength = "modestly" if score > -0.5 else "clearly"
+        verdict = (f"Net signal {score:+.2f}% - {strength} negative from "
+                   f"{counted} weighted cues.")
 
-    # If some instruments failed to fetch, say so inside the verdict itself.
-    # A footnote below is easy to skim past, and "all cues agree" reads far
-    # more confident than it should when it's really "all cues that worked".
-    if expected_directional is not None and total < expected_directional:
-        missing = expected_directional - total
-        verdict = (
-            f"[PARTIAL DATA - {missing} of {expected_directional} directional "
-            f"instruments missing] " + verdict
-        )
+    if expected_directional is not None and counted < expected_directional:
+        missing = expected_directional - counted
+        verdict = (f"[PARTIAL - {missing} of {expected_directional} weighted "
+                   f"cues missing] " + verdict)
 
     return verdict, lines
 
@@ -256,7 +270,7 @@ def main():
                 f"First error: {failures[0][1] if failures else 'none recorded'}"
             )
 
-        expected_directional = sum(1 for i in INSTRUMENTS if i[2] != 0)
+        expected_directional = sum(1 for i in INSTRUMENTS if abs(i[2]) >= WEIGHT_FLOOR)
         verdict, lines = build_read(results, expected_directional)
 
         report = [
@@ -273,6 +287,11 @@ def main():
             for label, err in failures:
                 report.append(f"  - {label}: {err}")
             report.append("The read above is based only on what was retrieved.")
+        report.append("")
+        report.append("Weights are measured lagged correlations against next-day")
+        report.append("Nifty over 5 years. The strongest is only 0.24, so global")
+        report.append("cues explain roughly 6% of Nifty's daily variance - useful")
+        report.append("context, not a directional call.")
         report.append("")
 
         output = "\n".join(report)

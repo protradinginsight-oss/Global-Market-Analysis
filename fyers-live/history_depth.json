@@ -1,0 +1,62 @@
+{
+  "symbol": "NSE:RELIANCE-EQ",
+  "probed_on": "2026-08-22",
+  "results": [
+    {
+      "resolution": "1D",
+      "status": "ok",
+      "earliest": "2011-09-05",
+      "depth_days": 5465,
+      "depth_years": 15.0,
+      "calls": 10
+    },
+    {
+      "resolution": "240",
+      "status": "ok",
+      "earliest": "2017-06-30",
+      "depth_days": 3340,
+      "depth_years": 9.1,
+      "calls": 10
+    },
+    {
+      "resolution": "60",
+      "status": "ok",
+      "earliest": "2017-06-30",
+      "depth_days": 3340,
+      "depth_years": 9.1,
+      "calls": 10
+    },
+    {
+      "resolution": "30",
+      "status": "ok",
+      "earliest": "2017-06-30",
+      "depth_days": 3340,
+      "depth_years": 9.1,
+      "calls": 10
+    },
+    {
+      "resolution": "15",
+      "status": "ok",
+      "earliest": "2017-06-30",
+      "depth_days": 3340,
+      "depth_years": 9.1,
+      "calls": 10
+    },
+    {
+      "resolution": "5",
+      "status": "ok",
+      "earliest": "2017-06-30",
+      "depth_days": 3340,
+      "depth_years": 9.1,
+      "calls": 10
+    },
+    {
+      "resolution": "1",
+      "status": "ok",
+      "earliest": "2017-06-30",
+      "depth_days": 3340,
+      "depth_years": 9.1,
+      "calls": 10
+    }
+  ]
+}
