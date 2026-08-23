@@ -39,22 +39,35 @@ CANDLE_DB = BASE_DIR / "market_candles.db"
 TICK_DB = BASE_DIR / "market_ticks.db"
 
 IST = timezone(timedelta(hours=5, minutes=30))
-MARKET_OPEN = dtime(9, 15)
-MARKET_CLOSE = dtime(15, 30)
 FLUSH_SECONDS = 30
+
+try:
+    from market_hours import is_ticker_open, segment_for
+except ImportError:
+    print("market_hours.py not found - it must sit next to this script.")
+    sys.exit(1)
 
 _shutdown = threading.Event()
 
 
-def market_is_open(now=None):
+def any_symbol_open(symbols, now=None):
+    """Should this worker still be running?
+
+    A worker keeps going while ANY of its symbols is in a live session. This
+    matters once MCX is merged in: a shard holding both NSE stocks and
+    commodities has to stay alive until 23:30, long after the equities it
+    also carries have closed. Using one fixed NSE window would silently
+    discard the entire MCX evening session.
+    """
     now = now or datetime.now(IST)
-    if now.weekday() >= 5:
-        return False, "weekend"
-    if now.time() < MARKET_OPEN:
-        return False, "pre-open"
-    if now.time() > MARKET_CLOSE:
-        return False, "closed"
-    return True, "open"
+    open_segments = set()
+    for sym in symbols:
+        ok, _ = is_ticker_open(sym, now)
+        if ok:
+            open_segments.add(segment_for(sym))
+    if open_segments:
+        return True, "open: " + ", ".join(sorted(open_segments))
+    return False, "all segments closed"
 
 
 class CandleBuilder:
@@ -215,7 +228,11 @@ def main():
     signal.signal(signal.SIGINT, handle_stop)
     signal.signal(signal.SIGTERM, handle_stop)
 
-    log.info("starting with %d symbols", len(symbols))
+    segs = {}
+    for sym in symbols:
+        segs[segment_for(sym)] = segs.get(segment_for(sym), 0) + 1
+    log.info("starting with %d symbols across segments: %s",
+             len(symbols), ", ".join(f"{k}={v}" for k, v in sorted(segs.items())))
     threading.Thread(target=socket.connect, daemon=True).start()
 
     def flush():
@@ -265,9 +282,9 @@ def main():
                          state["connected"], state["messages"], age,
                          total_c, total_t, builder.pending_count())
                 if not args.ignore_hours:
-                    ok, why = market_is_open()
+                    ok, why = any_symbol_open(symbols)
                     if not ok:
-                        log.info("market %s - stopping", why)
+                        log.info("%s - stopping", why)
                         break
     finally:
         log.info("flushing before exit...")

@@ -27,7 +27,5 @@ option_chains.db
 mcx_universe.json
 mcx_universe_report.txt
 universe_snapshots.db
-bse_universe.json
-bse_universe_report.txt
 global_history.db
 trade_journal.db

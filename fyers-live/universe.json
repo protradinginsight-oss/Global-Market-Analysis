@@ -1,6 +1,6 @@
 {
   "built_from": "Fyers public symbol master",
-  "total_symbols": 213,
+  "total_symbols": 235,
   "max_per_connection": 200,
   "shards": {
     "acc1": [
@@ -222,7 +222,29 @@
       "NSE:WAAREEENER-EQ",
       "NSE:WIPRO-EQ",
       "NSE:YESBANK-EQ",
-      "NSE:ZYDUSLIFE-EQ"
+      "NSE:ZYDUSLIFE-EQ",
+      "MCX:ALUMINI26AUGFUT",
+      "MCX:ALUMINIUM26AUGFUT",
+      "MCX:COPPER26AUGFUT",
+      "MCX:CRUDEOIL26SEPFUT",
+      "MCX:CRUDEOILM26SEPFUT",
+      "MCX:GOLD26OCTFUT",
+      "MCX:GOLDM26SEPFUT",
+      "MCX:LEAD26AUGFUT",
+      "MCX:LEADMINI26AUGFUT",
+      "MCX:MCXBULLDEX26AUGFUT",
+      "MCX:MCXMETLDEX26AUGFUT",
+      "MCX:NATGASMINI26AUGFUT",
+      "MCX:NATURALGAS26AUGFUT",
+      "MCX:SILVER26SEPFUT",
+      "MCX:SILVERM26AUGFUT",
+      "MCX:ZINC26AUGFUT",
+      "MCX:ZINCMINI26AUGFUT",
+      "BSE:BANKEX-INDEX",
+      "BSE:SENSEX-INDEX",
+      "BSE:SNSX50-INDEX",
+      "BSE:BANKEX26AUGFUT",
+      "BSE:SENSEX26AUGFUT"
     ]
   },
   "tick_symbols": [
@@ -1297,6 +1319,117 @@
       "underlying": "ZYDUSLIFE",
       "ticker": "NSE:ZYDUSLIFE-EQ",
       "kind": "stock"
+    },
+    {
+      "underlying": "ALUMINI",
+      "ticker": "MCX:ALUMINI26AUGFUT",
+      "kind": "commodity"
+    },
+    {
+      "underlying": "ALUMINIUM",
+      "ticker": "MCX:ALUMINIUM26AUGFUT",
+      "kind": "commodity"
+    },
+    {
+      "underlying": "COPPER",
+      "ticker": "MCX:COPPER26AUGFUT",
+      "kind": "commodity"
+    },
+    {
+      "underlying": "CRUDEOIL",
+      "ticker": "MCX:CRUDEOIL26SEPFUT",
+      "kind": "commodity"
+    },
+    {
+      "underlying": "CRUDEOILM",
+      "ticker": "MCX:CRUDEOILM26SEPFUT",
+      "kind": "commodity"
+    },
+    {
+      "underlying": "GOLD",
+      "ticker": "MCX:GOLD26OCTFUT",
+      "kind": "commodity"
+    },
+    {
+      "underlying": "GOLDM",
+      "ticker": "MCX:GOLDM26SEPFUT",
+      "kind": "commodity"
+    },
+    {
+      "underlying": "LEAD",
+      "ticker": "MCX:LEAD26AUGFUT",
+      "kind": "commodity"
+    },
+    {
+      "underlying": "LEADMINI",
+      "ticker": "MCX:LEADMINI26AUGFUT",
+      "kind": "commodity"
+    },
+    {
+      "underlying": "MCXBULLDEX",
+      "ticker": "MCX:MCXBULLDEX26AUGFUT",
+      "kind": "commodity"
+    },
+    {
+      "underlying": "MCXMETLDEX",
+      "ticker": "MCX:MCXMETLDEX26AUGFUT",
+      "kind": "commodity"
+    },
+    {
+      "underlying": "NATGASMINI",
+      "ticker": "MCX:NATGASMINI26AUGFUT",
+      "kind": "commodity"
+    },
+    {
+      "underlying": "NATURALGAS",
+      "ticker": "MCX:NATURALGAS26AUGFUT",
+      "kind": "commodity"
+    },
+    {
+      "underlying": "SILVER",
+      "ticker": "MCX:SILVER26SEPFUT",
+      "kind": "commodity"
+    },
+    {
+      "underlying": "SILVERM",
+      "ticker": "MCX:SILVERM26AUGFUT",
+      "kind": "commodity"
+    },
+    {
+      "underlying": "ZINC",
+      "ticker": "MCX:ZINC26AUGFUT",
+      "kind": "commodity"
+    },
+    {
+      "underlying": "ZINCMINI",
+      "ticker": "MCX:ZINCMINI26AUGFUT",
+      "kind": "commodity"
+    },
+    {
+      "underlying": "BANKEX",
+      "ticker": "BSE:BANKEX-INDEX",
+      "kind": "index"
+    },
+    {
+      "underlying": "SENSEX",
+      "ticker": "BSE:SENSEX-INDEX",
+      "kind": "index"
+    },
+    {
+      "underlying": "SENSEX50",
+      "ticker": "BSE:SNSX50-INDEX",
+      "kind": "index"
+    },
+    {
+      "underlying": "BANKEX",
+      "ticker": "BSE:BANKEX26AUGFUT",
+      "kind": "future"
+    },
+    {
+      "underlying": "SENSEX",
+      "ticker": "BSE:SENSEX26AUGFUT",
+      "kind": "future"
     }
-  ]
+  ],
+  "mcx_shard": "acc4-mdkansari"
 }

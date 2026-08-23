@@ -29,8 +29,12 @@ TOKEN_FILE = BASE_DIR / "fyers_tokens.json"
 WORKER = BASE_DIR / "shard_worker.py"
 
 IST = timezone(timedelta(hours=5, minutes=30))
-MARKET_OPEN = dtime(9, 15)
-MARKET_CLOSE = dtime(15, 30)
+
+try:
+    from market_hours import is_ticker_open, segment_for, summary as hours_summary
+except ImportError:
+    print("market_hours.py not found - it must sit next to this script.")
+    sys.exit(1)
 
 # If a worker dies repeatedly it's a real fault, not a blip - stop retrying
 # so the log shows one clear problem rather than an endless restart loop.
@@ -49,15 +53,26 @@ log = logging.getLogger("supervisor")
 _stop = False
 
 
-def market_is_open(now=None):
+def market_is_open(all_symbols=None, now=None):
+    """Open if ANY tracked symbol is in a live session.
+
+    Once MCX is merged in, the supervisor cannot stop at 15:30 - commodities
+    trade until 23:30. It shuts down only when every segment it covers has
+    closed.
+    """
     now = now or datetime.now(IST)
-    if now.weekday() >= 5:
-        return False, "weekend"
-    if now.time() < MARKET_OPEN:
-        return False, f"pre-open (opens {MARKET_OPEN.strftime('%H:%M')})"
-    if now.time() > MARKET_CLOSE:
-        return False, f"closed (closed {MARKET_CLOSE.strftime('%H:%M')})"
-    return True, "open"
+    if not all_symbols:
+        # No universe loaded yet; fall back to NSE equity hours.
+        from market_hours import is_open as seg_open
+        return seg_open("NSE_CM", now)
+    live = set()
+    for sym in all_symbols:
+        ok, _ = is_ticker_open(sym, now)
+        if ok:
+            live.add(segment_for(sym))
+    if live:
+        return True, "open: " + ", ".join(sorted(live))
+    return False, "all segments closed"
 
 
 def main():
@@ -108,7 +123,14 @@ def main():
         sys.exit(1)
     print("\nAll tokens fresh for today.")
 
-    is_open, reason = market_is_open()
+    all_symbols = [s for syms in shards.values() for s in syms]
+    seg_counts = {}
+    for sym in all_symbols:
+        seg_counts[segment_for(sym)] = seg_counts.get(segment_for(sym), 0) + 1
+    print(f"Segments      : " +
+          ", ".join(f"{k} ({v})" for k, v in sorted(seg_counts.items())))
+
+    is_open, reason = market_is_open(all_symbols)
     print(f"Market status : {reason}")
     if not is_open and not args.ignore_hours:
         print("\nMarket is closed - nothing to collect.")
@@ -177,9 +199,9 @@ def main():
                 break
 
             if not args.ignore_hours:
-                ok, why = market_is_open()
+                ok, why = market_is_open(all_symbols)
                 if not ok:
-                    log.info("market %s - shutting down workers", why)
+                    log.info("%s - shutting down workers", why)
                     break
     finally:
         for label, p in procs.items():

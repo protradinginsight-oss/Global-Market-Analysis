@@ -168,7 +168,21 @@ def refresh_account(acct, is_first):
         return None
 
     if not isinstance(resp, dict) or "access_token" not in resp:
-        print(f"  FAILED - unexpected response: {str(resp)[:300]}")
+        print("  FAILED - Fyers rejected the auth code exchange.")
+        print(f"  Full response: {resp}")
+        # The usual causes, in rough order of likelihood.
+        print("\n  Most common reasons:")
+        print("   1. redirect_uri in config_local.py doesn't EXACTLY match")
+        print(f"      the app on myapi.fyers.in. Yours is:")
+        print(f"        {acct['redirect_uri']}")
+        print("      Check for a missing/extra 'www.' or trailing slash.")
+        print("   2. The auth code was already used - each one works once.")
+        print("      Get a fresh URL by rerunning rather than reusing a")
+        print("      browser tab you'd already submitted.")
+        print("   3. The auth code expired - they are short-lived, so paste")
+        print("      it promptly rather than leaving the tab open.")
+        print("   4. secret_key is wrong for this client_id - easy to mix up")
+        print("      when several accounts are configured together.")
         return None
 
     access_token = resp["access_token"]
@@ -259,6 +273,10 @@ def main():
                         help="refresh every account, even fresh ones")
     parser.add_argument("--check", action="store_true",
                         help="report status only, change nothing")
+    parser.add_argument("--account", metavar="LABEL",
+                        help="refresh just this one account (use --check to "
+                             "see the labels). Useful for isolating an "
+                             "account that keeps failing.")
     args = parser.parse_args()
 
     tokens = load_tokens()
@@ -266,8 +284,17 @@ def main():
     if args.check:
         sys.exit(0 if cmd_check(tokens) == 0 else 1)
 
-    todo = [a for a in ACCOUNTS
-            if args.all or not is_fresh(tokens.get(a["label"]))]
+    if args.account:
+        match = [a for a in ACCOUNTS if a["label"] == args.account]
+        if not match:
+            print(f"\nNo account labelled '{args.account}'.")
+            print("Labels are: " + ", ".join(a["label"] for a in ACCOUNTS))
+            sys.exit(1)
+        todo = match
+        print(f"\nRefreshing just '{args.account}'.")
+    else:
+        todo = [a for a in ACCOUNTS
+                if args.all or not is_fresh(tokens.get(a["label"]))]
 
     if not todo:
         print("\nAll tokens are already fresh for today. Nothing to do.")

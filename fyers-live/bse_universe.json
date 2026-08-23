@@ -1,0 +1,42 @@
+{
+  "built_on": "2026-08-23",
+  "source": "Fyers BSE_CM and BSE_FO symbol masters",
+  "count": 5,
+  "contracts": [
+    {
+      "ticker": "BSE:BANKEX-INDEX",
+      "underlying": "BANKEX",
+      "kind": "index",
+      "expiry": null,
+      "segment": "NSE_CM"
+    },
+    {
+      "ticker": "BSE:SENSEX-INDEX",
+      "underlying": "SENSEX",
+      "kind": "index",
+      "expiry": null,
+      "segment": "NSE_CM"
+    },
+    {
+      "ticker": "BSE:SNSX50-INDEX",
+      "underlying": "SENSEX50",
+      "kind": "index",
+      "expiry": null,
+      "segment": "NSE_CM"
+    },
+    {
+      "ticker": "BSE:BANKEX26AUGFUT",
+      "underlying": "BANKEX",
+      "kind": "future",
+      "expiry": "2026-08-27",
+      "segment": "NSE_CM"
+    },
+    {
+      "ticker": "BSE:SENSEX26AUGFUT",
+      "underlying": "SENSEX",
+      "kind": "future",
+      "expiry": "2026-08-27",
+      "segment": "NSE_CM"
+    }
+  ]
+}
