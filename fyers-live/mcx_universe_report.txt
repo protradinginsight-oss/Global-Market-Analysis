@@ -1,0 +1,32 @@
+MCX SUBSCRIPTION UNIVERSE
+==========================================================================
+Built: 2026-08-23
+Contracts: 17 (front month only)
+
+Underlying       Ticker                       Expiry        Expiries Segment
+--------------------------------------------------------------------------
+ALUMINI          MCX:ALUMINI26AUGFUT          2026-08-31           5 MCX
+ALUMINIUM        MCX:ALUMINIUM26AUGFUT        2026-08-31           5 MCX
+COPPER           MCX:COPPER26AUGFUT           2026-08-31           5 MCX
+CRUDEOIL         MCX:CRUDEOIL26SEPFUT         2026-09-21           6 MCX
+CRUDEOILM        MCX:CRUDEOILM26SEPFUT        2026-09-21           6 MCX
+GOLD             MCX:GOLD26OCTFUT             2026-10-05           6 MCX
+GOLDM            MCX:GOLDM26SEPFUT            2026-09-04           6 MCX
+LEAD             MCX:LEAD26AUGFUT             2026-08-31           5 MCX
+LEADMINI         MCX:LEADMINI26AUGFUT         2026-08-31           5 MCX
+MCXBULLDEX       MCX:MCXBULLDEX26AUGFUT       2026-08-28           4 MCX
+MCXMETLDEX       MCX:MCXMETLDEX26AUGFUT       2026-08-24           4 MCX
+NATGASMINI       MCX:NATGASMINI26AUGFUT       2026-08-26           6 MCX
+NATURALGAS       MCX:NATURALGAS26AUGFUT       2026-08-26           6 MCX
+SILVER           MCX:SILVER26SEPFUT           2026-09-04           5 MCX
+SILVERM          MCX:SILVERM26AUGFUT          2026-08-31           5 MCX
+ZINC             MCX:ZINC26AUGFUT             2026-08-31           5 MCX
+ZINCMINI         MCX:ZINCMINI26AUGFUT         2026-08-31           5 MCX
+
+Only front-month contracts are included. MCX lists several
+expiries per commodity but liquidity concentrates in the
+nearest one, so tracking the rest would spend websocket
+slots on contracts that barely trade.
+
+Options are excluded - MCX option chains come from the REST
+optionchain endpoint, the same as NSE.

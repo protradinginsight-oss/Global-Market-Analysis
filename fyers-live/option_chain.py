@@ -54,9 +54,15 @@ MARKET_CLOSE = dtime(15, 30)
 # Rough daily volume at these settings: indices ~5 x 41 x 75 = 15k rows,
 # stocks ~208 x 21 x 13 = 57k rows. About 72k rows/day, which is manageable.
 TIERS = {
-    "index": {"interval_sec": 300,  "strikecount": 20},
-    "stock": {"interval_sec": 1800, "strikecount": 10},
+    "index": {"interval_sec": 300,  "strikecount": 20, "expiries": 3},
+    "stock": {"interval_sec": 1800, "strikecount": 10, "expiries": 1},
 }
+
+# Indices expose 18 expiries out to 2031, but the far ones barely trade and
+# fetching all of them would multiply the call count for no benefit. Three
+# covers what actually matters for a premium seller: this week, next week,
+# and the monthly - which is the comparison that decides where to sell.
+# Stocks stay on one expiry; their far months are illiquid.
 
 SECONDS_BETWEEN_CALLS = 0.4
 
@@ -90,7 +96,8 @@ def init_db():
             snapshot_ts   TEXT NOT NULL,   -- IST, when this sweep ran
             underlying    TEXT NOT NULL,
             spot          REAL,
-            expiry_ts     INTEGER,
+            expiry_ts     INTEGER,          -- which expiry this row is for
+            expiry_date   TEXT,
             strike        REAL NOT NULL,
             option_type   TEXT NOT NULL,   -- CE or PE
             symbol        TEXT,
@@ -108,7 +115,7 @@ def init_db():
             vega          REAL,
             bid           REAL,
             ask           REAL,
-            PRIMARY KEY (snapshot_ts, underlying, strike, option_type)
+            PRIMARY KEY (snapshot_ts, underlying, expiry_ts, strike, option_type)
         )
     """)
     conn.execute("CREATE INDEX IF NOT EXISTS idx_chain_und ON chain_snapshot(underlying, snapshot_ts)")
@@ -129,12 +136,30 @@ def init_db():
     return conn
 
 
-def fetch_chain(client, symbol, strikecount):
-    """One option chain call. Returns (rows, spot, note)."""
+def list_expiries(client, symbol):
+    """Available expiries as (timestamp, date_string), nearest first."""
+    resp = client.optionchain({"symbol": symbol, "strikecount": 1,
+                               "timestamp": "", "greeks": 1})
+    if not isinstance(resp, dict) or resp.get("s") != "ok":
+        return []
+    ed = (resp.get("data") or {}).get("expiryData") or []
+    out = []
+    for e in ed:
+        if isinstance(e, dict) and e.get("expiry"):
+            out.append((str(e["expiry"]), e.get("date", "")))
+    return out
+
+
+def fetch_chain(client, symbol, strikecount, timestamp=""):
+    """One option chain call. Returns (rows, spot, note).
+
+    An empty timestamp gets the front expiry; passing one from
+    list_expiries() gets that specific expiry instead.
+    """
     resp = client.optionchain({
         "symbol": symbol,
         "strikecount": strikecount,
-        "timestamp": "",       # empty = current expiry
+        "timestamp": timestamp,
         "greeks": 1,           # delta, gamma, theta, vega, iv
     })
     if not isinstance(resp, dict):
@@ -184,12 +209,12 @@ def fetch_chain(client, symbol, strikecount):
             "vega": gk.get("vega"),
             "bid": o.get("bid"),
             "ask": o.get("ask"),
-            "expiry_ts": o.get("fyToken") and data.get("expiryData", [{}])[0].get("expiry"),
         })
     return rows, spot, "ok"
 
 
-def store_chain(conn, snapshot_ts, underlying, spot, rows):
+def store_chain(conn, snapshot_ts, underlying, spot, rows,
+                expiry_ts=None, expiry_date=None):
     def num(v):
         try:
             return float(v) if v is not None else None
@@ -203,7 +228,7 @@ def store_chain(conn, snapshot_ts, underlying, spot, rows):
             return None
 
     payload = [
-        (snapshot_ts, underlying, num(spot), intg(r.get("expiry_ts")),
+        (snapshot_ts, underlying, num(spot), intg(expiry_ts), expiry_date,
          r["strike"], r["option_type"], r.get("symbol"),
          num(r.get("ltp")), num(r.get("change_pct")),
          intg(r.get("volume")), intg(r.get("oi")), intg(r.get("oi_change")),
@@ -215,10 +240,10 @@ def store_chain(conn, snapshot_ts, underlying, spot, rows):
     ]
     conn.executemany(
         """INSERT OR REPLACE INTO chain_snapshot
-           (snapshot_ts, underlying, spot, expiry_ts, strike, option_type,
-            symbol, ltp, change_pct, volume, oi, oi_change, oi_change_pct,
-            prev_oi, iv, delta, gamma, theta, vega, bid, ask)
-           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""", payload)
+           (snapshot_ts, underlying, spot, expiry_ts, expiry_date, strike,
+            option_type, symbol, ltp, change_pct, volume, oi, oi_change,
+            oi_change_pct, prev_oi, iv, delta, gamma, theta, vega, bid, ask)
+           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""", payload)
     return len(payload)
 
 
@@ -300,13 +325,16 @@ def main():
     print("  OPTION CHAIN COLLECTOR")
     print("=" * 74)
     print(f"\nIndices : {idx_n}  (every {TIERS['index']['interval_sec']//60} min, "
-          f"{TIERS['index']['strikecount']} strikes each side)")
+          f"{TIERS['index']['strikecount']} strikes each side, "
+          f"{TIERS['index'].get('expiries',1)} expiries)")
     print(f"Stocks  : {stk_n}  (every {TIERS['stock']['interval_sec']//60} min, "
           f"{TIERS['stock']['strikecount']} strikes each side)")
     print(f"Accounts: {len(usable)}")
 
-    calls_per_day = (idx_n * (23400 // TIERS['index']['interval_sec']) +
-                     stk_n * (23400 // TIERS['stock']['interval_sec']))
+    calls_per_day = (idx_n * (23400 // TIERS['index']['interval_sec'])
+                       * TIERS['index'].get('expiries', 1) +
+                     stk_n * (23400 // TIERS['stock']['interval_sec'])
+                       * TIERS['stock'].get('expiries', 1))
     print(f"\nEstimated calls/day: {calls_per_day:,}  "
           f"({calls_per_day//len(usable):,} per account, "
           f"{calls_per_day/len(usable)/100000*100:.1f}% of quota)")
@@ -333,6 +361,7 @@ def main():
     signal.signal(signal.SIGINT, handle_stop)
 
     last_run = {}
+    expiry_cache = {}
     call_no = 0
     total_rows = 0
     sweeps = 0
@@ -352,17 +381,36 @@ def main():
                     break
                 label, client = clients[call_no % len(clients)]
                 call_no += 1
+                n_exp = TIERS[tier].get("expiries", 1)
                 try:
-                    rows, spot, note = fetch_chain(
-                        client, sym, TIERS[tier]["strikecount"])
-                    if rows:
-                        n = store_chain(conn, snapshot_ts, sym, spot, rows)
-                        rows_this += n
+                    # Cache the expiry list per symbol per session - it only
+                    # changes when a contract rolls, so refetching it on
+                    # every sweep would waste a call each time.
+                    if n_exp > 1 and sym not in expiry_cache:
+                        expiry_cache[sym] = list_expiries(client, sym)
+                        time.sleep(SECONDS_BETWEEN_CALLS)
+                    targets = ([(t, d) for t, d in
+                                expiry_cache.get(sym, [])[:n_exp]]
+                               or [("", "")])
+
+                    got_any = False
+                    for exp_ts, exp_date in targets:
+                        rows, spot, note = fetch_chain(
+                            client, sym, TIERS[tier]["strikecount"], exp_ts)
+                        if rows:
+                            n = store_chain(conn, snapshot_ts, sym, spot, rows,
+                                            exp_ts or None, exp_date or None)
+                            rows_this += n
+                            got_any = True
+                        if len(targets) > 1:
+                            time.sleep(SECONDS_BETWEEN_CALLS)
+
+                    if got_any:
                         ok += 1
-                        status, detail = "ok", note
+                        status, detail = "ok", f"{len(targets)} expiry/expiries"
                     else:
                         failed += 1
-                        status, detail = "empty", note
+                        status, detail = "empty", "no rows"
                 except Exception as e:
                     failed += 1
                     status, detail = "error", f"{type(e).__name__}: {str(e)[:80]}"

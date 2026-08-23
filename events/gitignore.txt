@@ -1,0 +1,35 @@
+# Real secrets - never commit this, only config_local.example.py
+config_local.py
+
+# Local data and logs - this is your data, not code
+*.db
+*.log
+
+# Python
+__pycache__/
+*.pyc
+
+# launchd logs if you point them at this folder
+launchd_stdout.log
+launchd_stderr.log
+
+# Fyers live access tokens - credentials, never commit
+fyers_tokens.json
+*.json.bak
+
+# Downloaded symbol master files and generated universe - regenerable, large
+symbol_data/
+universe.json
+universe_report.txt
+camarilla_screen.csv
+history_depth.json
+option_chains.db
+mcx_universe.json
+mcx_universe_report.txt
+universe_snapshots.db
+bse_universe.json
+bse_universe_report.txt
+global_history.db
+trade_journal.db
+dashboard.html
+events.db
